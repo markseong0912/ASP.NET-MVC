@@ -1,0 +1,13 @@
+﻿@model NewVidly.ViewModels.RandomMovieViewModels
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie</h2>
+<p>
+    @Html.ActionLink("Shrek!", "Index", "Movies", new { id = 1})
+</p>
+<p>
+    @Html.ActionLink("Wall-E", "Index", "Movies", new { id = 2})
+</p>
