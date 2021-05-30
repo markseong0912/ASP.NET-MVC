@@ -1,13 +1,30 @@
-﻿@model NewVidly.ViewModels.RandomMovieViewModels
+﻿@*@model Vidly.ViewModels.RandomMovieViewModel*@
+@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Movie</h2>
-<p>
-    @Html.ActionLink("Shrek!", "Index", "Movies", new { id = 1})
-</p>
-<p>
-    @Html.ActionLink("Wall-E", "Index", "Movies", new { id = 2})
-</p>
+<table class ="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Movie</th>
+                <th>Genre</th>
+                @*<th>Delete</th>*@
+            </tr>
+            <tbody>
+                @foreach(var movie in Model)
+                {
+                <tr>
+                    <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre.Name</td>
+                    @*<td>@Html.ActionLink(movie.Genre.Name, "Details", "Movies", new { id = movie.Id }, null);</td>*@
+                    @*<td>@movie.Genre.Name</td>*@
+                </tr>
+                }
+            </tbody>       
+        </thead>
+
+    </table>
+
