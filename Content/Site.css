@@ -16,6 +16,12 @@
     white-space: normal;
 }
 
+.input-validation-error{
+    color:red;
+}
+.field-validation-error{
+    border: 2px solid red;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
